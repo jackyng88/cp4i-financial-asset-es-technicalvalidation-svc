@@ -32,13 +32,16 @@ public class TechnicalValidation {
 
         LOGGER.info("Message received from topic = {}", receivedMessage);
 
-        if (receivedMessage.technical_validation) {
+        if (receivedMessage.technical_validation && !receivedMessage.compliance_services &&
+            !receivedMessage.schema_validation) {
             /*
-            Check whether technical_valiation is true. If so
-            we flip the boolean value to indicate that this service has processed it.
+            Check whether technical_valiation is true as well as if compliance_services (previous) 
+            and schema_validation (next) are false. If so it's ready to be processed.
+            We flip the boolean value to indicate that this service has processed it and ready for the next step. 
             */
             receivedMessage.technical_validation = false;
-        
+            receivedMessage.schema_validation = true;
+
             return Flowable.just(receivedMessage);
         }
 
