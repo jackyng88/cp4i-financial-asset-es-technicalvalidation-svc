@@ -13,7 +13,6 @@ import javax.enterprise.context.ApplicationScoped;
 
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
-import javax.json.JsonObject;
 
 
 @ApplicationScoped
