@@ -47,7 +47,7 @@ ENV JAVA_OPTIONS="-Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jb
 
 COPY target/lib/* /deployments/lib/
 COPY target/*-runner.jar /deployments/app.jar
-COPY src/main/resource/ssl/es-cert.jks /work/ssl
+COPY src/main/resources/ssl/es-cert.jks /work/ssl
 
 EXPOSE 8081
 USER 1001
