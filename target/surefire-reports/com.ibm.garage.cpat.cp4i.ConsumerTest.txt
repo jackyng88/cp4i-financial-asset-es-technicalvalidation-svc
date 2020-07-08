@@ -1,10 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.ibm.garage.cpat.cp4i.ConsumerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.658 s <<< FAILURE! - in com.ibm.garage.cpat.cp4i.ConsumerTest
-testHelloEndpoint  Time elapsed: 0.001 s  <<< ERROR!
-java.lang.RuntimeException: java.lang.RuntimeException: Failed to start quarkus
-Caused by: java.lang.RuntimeException: Failed to start quarkus
-Caused by: javax.enterprise.inject.spi.DeploymentException: java.util.NoSuchElementException: Cannot find attribute `ssl.truststore.location` for channel `pre-technical-check`. Has been tried: mp.messaging.incoming.pre-technical-check.ssl.truststore.location and mp.messaging.connector.smallrye-kafka.ssl.truststore.location
-Caused by: java.util.NoSuchElementException: Cannot find attribute `ssl.truststore.location` for channel `pre-technical-check`. Has been tried: mp.messaging.incoming.pre-technical-check.ssl.truststore.location and mp.messaging.connector.smallrye-kafka.ssl.truststore.location
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.988 s <<< FAILURE! - in com.ibm.garage.cpat.cp4i.ConsumerTest
+testHelloEndpoint  Time elapsed: 1.121 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <404>.
+
+	at com.ibm.garage.cpat.cp4i.ConsumerTest.testHelloEndpoint(ConsumerTest.java:17)
 
