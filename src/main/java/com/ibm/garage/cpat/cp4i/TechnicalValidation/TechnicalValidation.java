@@ -38,8 +38,10 @@ public class TechnicalValidation {
             We flip the boolean value to indicate that this service has processed it and ready for the next step. 
             */
             receivedMessage.technical_validation = false;
-            //receivedMessage.schema_validation = true;
 
+            if (!receivedMessage.schema_validation) {
+                receivedMessage.schema_validation = true;
+            }
             return Flowable.just(receivedMessage);
         }
 
